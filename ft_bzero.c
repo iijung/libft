@@ -6,7 +6,7 @@
 /*   By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 21:16:40 by minjungk          #+#    #+#             */
-/*   Updated: 2022/07/06 18:07:02 by minjungk         ###   ########.fr       */
+/*   Updated: 2022/07/07 20:34:47 by minjungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t			i;
 	unsigned char	*p;
 
-	i = -1;
 	p = s;
-	while (++i < n)
-		p[i] = 0;
+	while (n--)
+		*p++ = 0;
 }

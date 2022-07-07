@@ -6,8 +6,22 @@
 /*   By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 21:53:05 by minjungk          #+#    #+#             */
-/*   Updated: 2022/07/06 22:22:24 by minjungk         ###   ########.fr       */
+/*   Updated: 2022/07/07 20:51:15 by minjungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strrchr(const char *s, int c)
+{
+	const char	*p;
+
+	p = 0;
+	while (*s)
+	{
+		if (*s == c)
+			p = s;
+		++s;
+	}
+	if (*s == c)
+		p = s;
+	return ((char *)p);
+}
