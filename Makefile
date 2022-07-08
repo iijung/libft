@@ -6,7 +6,7 @@
 #    By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/04 20:07:19 by minjungk          #+#    #+#              #
-#    Updated: 2022/07/08 18:40:15 by minjungk         ###   ########.fr        #
+#    Updated: 2022/07/08 22:01:11 by minjungk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,10 +38,10 @@ SRCS = \
 	ft_memchr.c \
 	ft_memcmp.c \
 	ft_strnstr.c \
-#	ft_atoi.c \
+	ft_atoi.c \
 	ft_calloc.c \
 	ft_strdup.c \
-	ft_substr.c \
+#	ft_substr.c \
 	ft_strjoin.c \
 	ft_strtrim.c \
 	ft_split.c \
