@@ -6,7 +6,7 @@
 /*   By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 18:40:40 by minjungk          #+#    #+#             */
-/*   Updated: 2022/07/08 20:09:07 by minjungk         ###   ########.fr       */
+/*   Updated: 2022/07/10 03:06:08 by minjungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	if (*needle == 0)
 		return ((char *)haystack);
 	i = -1;
-	while (++i < len)
+	while (++i < len && haystack[i])
 	{
 		j = 0;
 		while (i + j < len)

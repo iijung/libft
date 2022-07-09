@@ -6,7 +6,7 @@
 /*   By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 20:51:02 by minjungk          #+#    #+#             */
-/*   Updated: 2022/07/09 21:36:05 by minjungk         ###   ########.fr       */
+/*   Updated: 2022/07/10 03:20:42 by minjungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	while (src[slen])
 		++slen;
 	dlen = 0;
-	while (dst[dlen])
+	while (dst[dlen] && dlen < dstsize)
 		++dlen;
 	if (dstsize <= dlen)
 		return (dstsize + slen);

@@ -6,7 +6,7 @@
 /*   By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 01:38:44 by minjungk          #+#    #+#             */
-/*   Updated: 2022/07/10 02:17:45 by minjungk         ###   ########.fr       */
+/*   Updated: 2022/07/10 02:30:53 by minjungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 		*lst = (*lst)->next;
 		del(tmp->content);
 		free(tmp);
+		tmp = 0;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 01:36:00 by minjungk          #+#    #+#             */
-/*   Updated: 2022/07/10 02:17:05 by minjungk         ###   ########.fr       */
+/*   Updated: 2022/07/10 02:31:03 by minjungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	while (lst)
-	{
-		del(lst->content);
-		lst = lst->next;
-	}
+	if (lst == 0 || del == 0)
+		return ;
+	del(lst->content);
+	free(lst);
+	lst = 0;
 }
