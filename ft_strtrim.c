@@ -6,7 +6,7 @@
 /*   By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 15:58:44 by minjungk          #+#    #+#             */
-/*   Updated: 2022/07/09 18:33:14 by minjungk         ###   ########.fr       */
+/*   Updated: 2022/07/10 01:21:10 by minjungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	end = ft_strrchr(s1, 0);
 	while (start <= end && ft_strchr(set, *end))
 		--end;
-	rtn = ft_calloc(end - start + 2, sizeof(char));
+	rtn = (char *)ft_calloc(end - start + 2, sizeof(char));
 	if (rtn)
 		ft_strlcpy(rtn, start, end - start + 2);
 	return (rtn);

@@ -6,7 +6,7 @@
 /*   By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 15:35:40 by minjungk          #+#    #+#             */
-/*   Updated: 2022/07/09 15:54:28 by minjungk         ###   ########.fr       */
+/*   Updated: 2022/07/10 01:20:46 by minjungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (s1 == 0 || s2 == 0)
 		return (0);
 	dlen = ft_strlen(s1) + ft_strlen(s2);
-	dst = ft_calloc(dlen + 1, sizeof(char));
+	dst = (char *)ft_calloc(dlen + 1, sizeof(char));
 	if (dst)
 	{
 		ft_strlcat(dst, s1, dlen + 1);

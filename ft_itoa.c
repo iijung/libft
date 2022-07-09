@@ -6,7 +6,7 @@
 /*   By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 22:05:50 by minjungk          #+#    #+#             */
-/*   Updated: 2022/07/09 23:52:42 by minjungk         ###   ########.fr       */
+/*   Updated: 2022/07/10 01:20:22 by minjungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_itoa(int n)
 
 	num = n * ((n > 0) - (n < 0));
 	i = numlen(num) + (n < 0);
-	rtn = ft_calloc(i + 1, sizeof(char));
+	rtn = (char *)ft_calloc(i + 1, sizeof(char));
 	if (rtn == 0)
 		return (0);
 	while (num)

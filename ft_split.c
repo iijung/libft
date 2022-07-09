@@ -6,7 +6,7 @@
 /*   By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 17:18:06 by minjungk          #+#    #+#             */
-/*   Updated: 2022/07/09 22:39:16 by minjungk         ###   ########.fr       */
+/*   Updated: 2022/07/10 01:20:36 by minjungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ char	**ft_split(char const *s, char c)
 		return (0);
 	i = -1;
 	cnt = count_words((char *)s, c);
-	rtn = ft_calloc(cnt + 1, sizeof(char *));
+	rtn = (char **)ft_calloc(cnt + 1, sizeof(char *));
 	while (rtn && ++i < cnt)
 	{
 		while (*s && *s == c)

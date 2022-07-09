@@ -6,7 +6,7 @@
 #    By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/04 20:07:19 by minjungk          #+#    #+#              #
-#    Updated: 2022/07/10 00:38:13 by minjungk         ###   ########.fr        #
+#    Updated: 2022/07/10 01:49:57 by minjungk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,7 @@ SRCS = \
 	ft_putnbr_fd.c
 
 SRCS_B = \
-#	ft_lstnew.c \
+	ft_lstnew.c \
 	ft_lstadd_front.c \
 	ft_lstsize.c \
 	ft_lstlast.c \
@@ -76,7 +76,7 @@ $(NAME): $(OBJS)
 	$(AR) $(ARFLAGS) $(NAME) $^
 
 bonus: $(OBJS_B)
-	$(AR) $(ARFLGS) $(NAME) $^
+	$(AR) $(ARFLAGS) $(NAME) $^
 
 clean:
 	$(RM) $(OBJS) $(OBJS_B)
