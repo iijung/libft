@@ -6,13 +6,13 @@
 /*   By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 17:18:06 by minjungk          #+#    #+#             */
-/*   Updated: 2022/07/09 22:00:35 by minjungk         ###   ########.fr       */
+/*   Updated: 2022/07/09 22:39:16 by minjungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	count_words(char *s, char c)
+static size_t	count_words(char *s, char c)
 {
 	size_t	cnt;
 
@@ -29,7 +29,7 @@ size_t	count_words(char *s, char c)
 	return (cnt);
 }
 
-char	**free_words(char **words, size_t n)
+static char	**free_words(char **words, size_t n)
 {
 	size_t	i;
 
