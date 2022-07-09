@@ -6,13 +6,13 @@
 /*   By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 17:18:06 by minjungk          #+#    #+#             */
-/*   Updated: 2022/07/09 20:35:42 by minjungk         ###   ########.fr       */
+/*   Updated: 2022/07/09 22:00:35 by minjungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	count_word(char *s, char c)
+size_t	count_words(char *s, char c)
 {
 	size_t	cnt;
 
@@ -29,30 +29,38 @@ size_t	count_word(char *s, char c)
 	return (cnt);
 }
 
+char	**free_words(char **words, size_t n)
+{
+	size_t	i;
+
+	i = -1;
+	while (++i < n)
+		free(words[i]);
+	return (0);
+}
+
 char	**ft_split(char const *s, char c)
 {
+	size_t	i;
 	size_t	cnt;
-	char	*start;
-	char	*end;
+	char	*p;
 	char	**rtn;
 
 	if (s == 0)
 		return (0);
-	cnt = count_word((char *)s, c);
+	i = -1;
+	cnt = count_words((char *)s, c);
 	rtn = ft_calloc(cnt + 1, sizeof(char *));
-	start = ft_strrchr(s, 0);
-	while (rtn)
+	while (rtn && ++i < cnt)
 	{
-		end = start - 1;
-		start = (char *)s;
-		if (start > end)
-			break ;
-		while (*end == c)
-			--end;
-		start = end;
-		while (start && start != s - 1 && *start != c)
-			--start;
-		rtn[--cnt] = ft_substr(s, start - s + 1, end - start);
+		while (*s && *s == c)
+			++s;
+		p = (char *)s;
+		while (*s && *s != c)
+			++s;
+		rtn[i] = ft_substr(p, 0, s - p);
+		if (rtn[i] == 0)
+			return (free_words(rtn, cnt));
 	}
 	return (rtn);
 }
