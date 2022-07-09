@@ -6,7 +6,7 @@
 #    By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/04 20:07:19 by minjungk          #+#    #+#              #
-#    Updated: 2022/07/09 23:18:05 by minjungk         ###   ########.fr        #
+#    Updated: 2022/07/10 00:38:13 by minjungk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,7 @@ SRCS = \
 	ft_strtrim.c \
 	ft_split.c \
 	ft_itoa.c \
-#	ft_strmapi.c \
+	ft_strmapi.c \
 	ft_striteri.c \
 	ft_putchar_fd.c \
 	ft_putstr_fd.c \

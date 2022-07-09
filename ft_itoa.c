@@ -6,33 +6,46 @@
 /*   By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 22:05:50 by minjungk          #+#    #+#             */
-/*   Updated: 2022/07/09 23:16:59 by minjungk         ###   ########.fr       */
+/*   Updated: 2022/07/09 23:52:42 by minjungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+static int	numlen(unsigned int n)
 {
-	int		len;
-	int		tmp;
-	char	*rtn;
+	int	len;
 
-	len = (n < 0) - (n > 0);
-	tmp = n;
-	while (tmp)
+	if (n == 0)
+		return (1);
+	len = 0;
+	while (n)
 	{
-		tmp /= 10;
 		++len;
-	}
-	rtn = ft_calloc(len + 1, sizeof(char));
-	if (rtn == 0)
-		return (0);
-	rtn[0] = '-';
-	while (n && --len >= 0)
-	{
-		rtn[len] = n % 10;
 		n /= 10;
 	}
+	return (len);
+}
+
+char	*ft_itoa(int n)
+{
+	int				i;
+	unsigned int	num;
+	char			*rtn;
+
+	num = n * ((n > 0) - (n < 0));
+	i = numlen(num) + (n < 0);
+	rtn = ft_calloc(i + 1, sizeof(char));
+	if (rtn == 0)
+		return (0);
+	while (num)
+	{
+		rtn[--i] = num % 10 + '0';
+		num /= 10;
+	}
+	if (n == 0)
+		rtn[0] = '0';
+	if (n < 0)
+		rtn[0] = '-';
 	return (rtn);
 }
