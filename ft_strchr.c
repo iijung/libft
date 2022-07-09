@@ -6,13 +6,13 @@
 /*   By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 21:48:22 by minjungk          #+#    #+#             */
-/*   Updated: 2022/07/06 22:07:19 by minjungk         ###   ########.fr       */
+/*   Updated: 2022/07/10 03:44:33 by minjungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s != c)
+	while (*s != (char)c)
 	{
 		if (*s == 0)
 			return (0);
