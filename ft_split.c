@@ -6,7 +6,7 @@
 /*   By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 17:18:06 by minjungk          #+#    #+#             */
-/*   Updated: 2022/07/10 02:31:30 by minjungk         ###   ########.fr       */
+/*   Updated: 2022/07/11 20:41:10 by minjungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ static char	**free_words(char **words, size_t n)
 		free(words[i]);
 		words[i] = 0;
 	}
+	free(words);
+	words = 0;
 	return (0);
 }
 
