@@ -6,7 +6,7 @@
 #    By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/04 20:07:19 by minjungk          #+#    #+#              #
-#    Updated: 2022/07/13 17:40:51 by minjungk         ###   ########.fr        #
+#    Updated: 2022/07/13 22:00:39 by minjungk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,7 +65,8 @@ SRCS_B = \
 OBJS = $(SRCS:.c=.o)
 OBJS_B = $(SRCS_B:.c=.o)
 
-all bonus: $(NAME)
+all : $(NAME)
+bonus: $(NAME)
 
 $(NAME): $(OBJS) $(if $(filter bonus,$(MAKECMDGOALS)), $(OBJS_B))
 	$(AR) $(ARFLAGS) $(NAME) $^
@@ -79,4 +80,4 @@ fclean: clean
 re: fclean
 	$(MAKE) all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re bonus $(NAME)
