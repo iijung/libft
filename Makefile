@@ -6,16 +6,14 @@
 #    By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/04 20:07:19 by minjungk          #+#    #+#              #
-#    Updated: 2022/07/10 01:49:57 by minjungk         ###   ########.fr        #
+#    Updated: 2022/07/13 17:40:51 by minjungk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-CC = cc
 CFLAGS = -Wall -Wextra -Werror
-AR = ar
-ARFLAGS = rscu
+ARFLAGS = rsc
 
 SRCS = \
 	ft_isalpha.c \
@@ -67,15 +65,9 @@ SRCS_B = \
 OBJS = $(SRCS:.c=.o)
 OBJS_B = $(SRCS_B:.c=.o)
 
-all: $(NAME)
+all bonus: $(NAME)
 
-%.o: %.c
-	$(CC) $(CFLAGS) -I. -c $<
-
-$(NAME): $(OBJS)
-	$(AR) $(ARFLAGS) $(NAME) $^
-
-bonus: $(OBJS_B)
+$(NAME): $(OBJS) $(if $(filter bonus,$(MAKECMDGOALS)), $(OBJS_B))
 	$(AR) $(ARFLAGS) $(NAME) $^
 
 clean:
@@ -84,8 +76,7 @@ clean:
 fclean: clean
 	$(RM) $(NAME)
 
-re:
-	$(MAKE) fclean
+re: fclean
 	$(MAKE) all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
