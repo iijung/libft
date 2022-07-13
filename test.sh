@@ -2,6 +2,18 @@
  echo -e "\033[32;1m"NORM"\033[m"
  read $a
  norminette ./*.c ./*.h
+ echo -e "\033[32;1m"Francinette"\033[m"
+ read $a
+ git clone https://github.com/xicodomingues/francinette
+ cd francinette/
+ ./grademe.sh
+ sed -i "" 's/~\/libft/..\//' my_config.sh
+ ./grademe.sh
+ cd ..
+#!/bin/bash
+ echo -e "\033[32;1m"NORM"\033[m"
+ read $a
+ norminette ./*.c ./*.h
  echo -e "\033[32;1m"LIBFT TEST"\033[m"
  read $a
  git clone https://github.com/jtoty/Libftest
@@ -53,3 +65,17 @@
  read $a
  make
  echo -e "\033[32;1m"DONE"\033[m"
+
+read -p "francinette install?[y/n] " yn
+if [ $yn = "y" ]; then
+	if [ ! -d ~/francinette ]; then
+		cd ~
+		bash -c "$(curl -fsSL https://raw.github.com/xicodomingues/francinette/master/bin/install.sh)"
+		cd -
+		alias francinette=${HOME}/francinette/tester.sh
+		alias paco=${HOME}/francinette/tester.sh
+	else
+		echo "francinette already installed"
+	fi
+	bash -c "${HOME}/francinette/tester.sh --strict"
+fi
