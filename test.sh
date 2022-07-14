@@ -2,18 +2,6 @@
  echo -e "\033[32;1m"NORM"\033[m"
  read $a
  norminette ./*.c ./*.h
- echo -e "\033[32;1m"Francinette"\033[m"
- read $a
- git clone https://github.com/xicodomingues/francinette
- cd francinette/
- ./grademe.sh
- sed -i "" 's/~\/libft/..\//' my_config.sh
- ./grademe.sh
- cd ..
-#!/bin/bash
- echo -e "\033[32;1m"NORM"\033[m"
- read $a
- norminette ./*.c ./*.h
  echo -e "\033[32;1m"LIBFT TEST"\033[m"
  read $a
  git clone https://github.com/jtoty/Libftest
