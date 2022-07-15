@@ -6,7 +6,7 @@
 /*   By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 22:10:13 by minjungk          #+#    #+#             */
-/*   Updated: 2022/07/10 03:47:35 by minjungk         ###   ########.fr       */
+/*   Updated: 2022/07/15 21:34:48 by minjungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	slen = ft_strlen(s);
 	if (slen <= start)
 		len = 0;
+	slen -= start;
 	if (slen < len)
 		len = slen;
 	dst = (char *)ft_calloc(len + 1, sizeof(char));
