@@ -6,7 +6,7 @@
 /*   By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 01:50:33 by minjungk          #+#    #+#             */
-/*   Updated: 2022/07/10 02:17:07 by minjungk         ###   ########.fr       */
+/*   Updated: 2022/07/15 21:01:05 by minjungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	while (lst)
+	while (lst && f)
 	{
 		f(lst->content);
 		lst = lst->next;

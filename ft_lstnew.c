@@ -6,7 +6,7 @@
 /*   By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 01:18:48 by minjungk          #+#    #+#             */
-/*   Updated: 2022/07/10 02:17:14 by minjungk         ###   ########.fr       */
+/*   Updated: 2022/07/14 23:01:35 by minjungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*new;
 
-	new = (t_list *)ft_calloc(1, sizeof(t_list));
+	new = (t_list *)malloc(sizeof(t_list));
 	if (new)
 	{
 		new->content = content;
