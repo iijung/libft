@@ -6,9 +6,11 @@
 /*   By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 20:10:10 by minjungk          #+#    #+#             */
-/*   Updated: 2022/07/08 21:29:47 by minjungk         ###   ########.fr       */
+/*   Updated: 2022/07/15 19:28:38 by minjungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <limits.h>
 
 int	ft_atoi(const char *str)
 {
@@ -28,10 +30,10 @@ int	ft_atoi(const char *str)
 	while ('0' <= *str && *str <= '9')
 	{
 		rtn = rtn * 10 + *str - '0';
-		if (sign > 0 && rtn > 0x7FFFFFFFFFFFFFFF)
-			return ((int)0x7FFFFFFFFFFFFFFF);
-		if (sign < 0 && rtn > 0x8000000000000000)
-			return ((int)0x8000000000000000);
+		if (sign > 0 && rtn > (unsigned long)LONG_MAX)
+			return ((int)LONG_MAX);
+		if (sign < 0 && rtn > (unsigned long)LONG_MIN)
+			return ((int)LONG_MIN);
 		++str;
 	}
 	rtn *= sign;
