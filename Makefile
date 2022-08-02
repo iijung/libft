@@ -6,7 +6,7 @@
 #    By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/04 20:07:19 by minjungk          #+#    #+#              #
-#    Updated: 2022/07/14 20:50:12 by minjungk         ###   ########.fr        #
+#    Updated: 2022/08/02 21:33:19 by minjungk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -78,6 +78,6 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean
-	$(MAKE) all
+	$(MAKE) $(if $(filter bonus,$(MAKECMDGOALS)), bonus, all)
 
 .PHONY: all clean fclean re bonus
