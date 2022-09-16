@@ -6,16 +6,19 @@
 #    By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/04 20:07:19 by minjungk          #+#    #+#              #
-#    Updated: 2022/08/02 21:33:19 by minjungk         ###   ########.fr        #
+#    Updated: 2022/09/16 12:30:13 by minjungk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+.DEFAULT_ON_ERROR:
+.DEFAULT_GOAL := all
+
 NAME = libft.a
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -MMD -MP
 ARFLAGS = rsc
 
-SRCS = \
+src_m = \
 	ft_isalpha.c \
 	ft_isdigit.c \
 	ft_isalnum.c \
@@ -51,7 +54,7 @@ SRCS = \
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c
 
-SRCS_B = \
+src_b = \
 	ft_lstnew.c \
 	ft_lstadd_front.c \
 	ft_lstsize.c \
@@ -62,17 +65,19 @@ SRCS_B = \
 	ft_lstiter.c \
 	ft_lstmap.c
 
-OBJS = $(SRCS:.c=.o)
-OBJS_B = $(SRCS_B:.c=.o)
+SRCS := $(src_m) $(if $(filter bonus,$(MAKECMDGOALS)), $(src_b))
+OBJS := $(SRCS:.c=.o)
+DEPS := $(SRCS:.c=.d)
+-include $(DEPS)
 
-all : $(NAME)
+all: $(NAME)
 bonus: $(NAME)
 
-$(NAME): $(OBJS) $(if $(filter bonus,$(MAKECMDGOALS)), $(OBJS_B))
-	$(AR) $(ARFLAGS) $(NAME) $^
+$(NAME): $(OBJS)
+	$(AR) $(ARFLAGS) $@ $^
 
 clean:
-	$(RM) $(OBJS) $(OBJS_B)
+	$(RM) $(wildcard *.o) $(wildcard *.d)
 
 fclean: clean
 	$(RM) $(NAME)
