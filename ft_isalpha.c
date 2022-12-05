@@ -6,11 +6,15 @@
 /*   By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 20:25:34 by minjungk          #+#    #+#             */
-/*   Updated: 2022/09/16 12:38:30 by minjungk         ###   ########.fr       */
+/*   Updated: 2022/12/05 20:59:56 by minjungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isalpha(int c)
 {
-	return (('a' <= c && c <= 'z') || ('A' <= c && c <= 'Z'));
+	if ('a' <= c && c <= 'z')
+		return (1);
+	if ('A' <= c && c <= 'Z')
+		return (2);
+	return (0);
 }
