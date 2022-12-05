@@ -6,7 +6,7 @@
 /*   By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 23:53:23 by minjungk          #+#    #+#             */
-/*   Updated: 2022/12/05 22:58:31 by minjungk         ###   ########.fr       */
+/*   Updated: 2022/12/06 02:19:44 by minjungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,12 @@
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	size_t	i;
-	size_t	slen;
 	char	*rtn;
 
-	if (s == NULL)
+	if (s == NULL || f == NULL)
 		return (NULL);
+	rtn = (char *)ft_calloc(ft_strlen(s) + 1, sizeof(char));
 	i = -1;
-	slen = ft_strlen(s);
-	rtn = (char *)ft_calloc(slen + 1, sizeof(char));
 	while (rtn && s[++i])
 		rtn[i] = f(i, s[i]);
 	return (rtn);
