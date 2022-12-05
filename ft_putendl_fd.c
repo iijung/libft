@@ -6,7 +6,7 @@
 /*   By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 00:31:56 by minjungk          #+#    #+#             */
-/*   Updated: 2022/09/16 13:54:58 by minjungk         ###   ########.fr       */
+/*   Updated: 2022/12/06 02:02:08 by minjungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	while (s && *s)
-		write(fd, s++, 1);
+	ft_putstr_fd(s, fd);
 	write(fd, "\n", 1);
 }
