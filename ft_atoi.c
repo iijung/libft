@@ -6,45 +6,46 @@
 /*   By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 20:10:10 by minjungk          #+#    #+#             */
-/*   Updated: 2022/09/16 15:49:13 by minjungk         ###   ########.fr       */
+/*   Updated: 2022/12/05 22:27:43 by minjungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <limits.h>
+#include "libft.h"
 
-static int	is_flow(unsigned long num, char c, int sign)
+static int	isflow(unsigned long num, char c, int minus)
 {
-	if (num < LONG_MAX / 10)
-		return (0);
-	if (num > LONG_MAX / 10 || c > '8')
-		return (1);
-	if (sign > 0 && c > '7')
-		return (1);
+	if (num > INT_MAX / 10 || (num == INT_MAX / 10 && (c > '7' + minus)))
+		errno = ERANGE;
+	if (num > LONG_MAX / 10 || (num == LONG_MAX / 10 && (c > '7' + minus)))
+	{
+		if (minus)
+			return ((int)LONG_MIN);
+		else
+			return ((int)LONG_MAX);
+	}
 	return (0);
 }
 
 int	ft_atoi(const char *str)
 {
-	int				sign;
 	unsigned long	rtn;
+	int				minus;
+	int				flow;
 
 	rtn = 0;
-	sign = 1;
+	minus = 0;
 	while ((9 <= *str && *str <= 13) || *str == ' ')
 		++str;
 	if (*str == '+' || *str == '-')
-	{
-		if (*str == '-')
-			sign *= -1;
-		++str;
-	}
+		minus = *str++ == '-';
 	while ('0' <= *str && *str <= '9')
 	{
-		if (sign > 0 && is_flow(rtn, *str, sign))
-			return ((int)LONG_MAX);
-		if (sign < 0 && is_flow(rtn, *str, sign))
-			return ((int)LONG_MIN);
+		flow = isflow(rtn, *str, minus);
+		if (flow)
+			return (flow);
 		rtn = rtn * 10 + *str++ - '0';
 	}
-	return ((int)(rtn * sign));
+	if (minus)
+		return (-rtn);
+	return (rtn);
 }

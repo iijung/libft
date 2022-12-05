@@ -6,7 +6,7 @@
 /*   By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 20:08:26 by minjungk          #+#    #+#             */
-/*   Updated: 2022/09/16 12:20:00 by minjungk         ###   ########.fr       */
+/*   Updated: 2022/12/05 20:58:49 by minjungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
+# include <errno.h>
 
 typedef struct s_list
 {
