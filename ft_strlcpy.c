@@ -6,7 +6,7 @@
 /*   By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 20:34:42 by minjungk          #+#    #+#             */
-/*   Updated: 2022/07/06 21:45:15 by minjungk         ###   ########.fr       */
+/*   Updated: 2022/12/05 23:01:22 by minjungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		dst[i] = src[i];
 		++i;
 	}
-	dst[i] = 0;
+	dst[i] = '\0';
 	return (slen);
 }

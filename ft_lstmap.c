@@ -6,7 +6,7 @@
 /*   By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 01:53:35 by minjungk          #+#    #+#             */
-/*   Updated: 2022/07/26 23:48:48 by minjungk         ###   ########.fr       */
+/*   Updated: 2022/12/05 22:50:23 by minjungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	{
 		tmp = f(lst->content);
 		new = ft_lstnew(tmp);
-		if (new == 0)
+		if (new == NULL)
 		{
 			free(tmp);
 			ft_lstclear(&head, del);
-			return (0);
+			return (NULL);
 		}
-		if (head == 0)
+		if (head == NULL)
 			head = new;
 		ft_lstadd_back(&tail, new);
 		tail = new;

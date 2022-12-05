@@ -6,7 +6,7 @@
 /*   By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 01:33:39 by minjungk          #+#    #+#             */
-/*   Updated: 2022/07/10 02:16:50 by minjungk         ###   ########.fr       */
+/*   Updated: 2022/12/05 23:00:41 by minjungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (lst == 0)
+	if (lst == NULL)
 		return ;
-	if (*lst == 0)
+	if (*lst == NULL)
 		*lst = new;
 	else
 		ft_lstlast(*lst)->next = new;

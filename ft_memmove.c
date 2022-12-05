@@ -6,7 +6,7 @@
 /*   By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 18:10:49 by minjungk          #+#    #+#             */
-/*   Updated: 2022/07/06 20:31:15 by minjungk         ###   ########.fr       */
+/*   Updated: 2022/12/05 22:45:46 by minjungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	unsigned char		*d;
 	const unsigned char	*s;
 
-	if (dst == 0 && src == 0)
-		return (0);
+	if (dst == NULL && src == NULL)
+		return (NULL);
 	d = dst;
 	s = src;
 	if (d < s)

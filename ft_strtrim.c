@@ -6,7 +6,7 @@
 /*   By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 15:58:44 by minjungk          #+#    #+#             */
-/*   Updated: 2022/07/10 01:21:10 by minjungk         ###   ########.fr       */
+/*   Updated: 2022/12/05 22:59:26 by minjungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*end;
 	char	*rtn;
 
-	if (s1 == 0 || set == 0)
-		return (0);
+	if (s1 == NULL || set == NULL)
+		return (NULL);
 	start = (char *)s1;
 	while (*start && ft_strchr(set, *start))
 		++start;

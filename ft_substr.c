@@ -6,7 +6,7 @@
 /*   By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 22:10:13 by minjungk          #+#    #+#             */
-/*   Updated: 2022/07/15 21:34:48 by minjungk         ###   ########.fr       */
+/*   Updated: 2022/12/05 22:59:33 by minjungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	slen;
 	char	*dst;
 
-	if (s == 0)
-		return (0);
+	if (s == NULL)
+		return (NULL);
 	slen = ft_strlen(s);
 	if (slen <= start)
 		len = 0;

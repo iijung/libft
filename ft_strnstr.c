@@ -6,7 +6,7 @@
 /*   By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 18:40:40 by minjungk          #+#    #+#             */
-/*   Updated: 2022/07/10 03:06:08 by minjungk         ###   ########.fr       */
+/*   Updated: 2022/12/05 22:59:10 by minjungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,5 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 			++j;
 		}
 	}
-	return (0);
+	return (NULL);
 }

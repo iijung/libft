@@ -6,7 +6,7 @@
 /*   By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 17:18:06 by minjungk          #+#    #+#             */
-/*   Updated: 2022/07/11 20:41:10 by minjungk         ###   ########.fr       */
+/*   Updated: 2022/12/05 22:50:58 by minjungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,7 @@ static char	**free_words(char **words, size_t n)
 		words[i] = 0;
 	}
 	free(words);
-	words = 0;
-	return (0);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
@@ -51,8 +50,8 @@ char	**ft_split(char const *s, char c)
 	char	*p;
 	char	**rtn;
 
-	if (s == 0)
-		return (0);
+	if (s == NULL)
+		return (NULL);
 	i = -1;
 	cnt = count_words((char *)s, c);
 	rtn = (char **)ft_calloc(cnt + 1, sizeof(char *));
@@ -64,7 +63,7 @@ char	**ft_split(char const *s, char c)
 		while (*s && *s != c)
 			++s;
 		rtn[i] = ft_substr(p, 0, s - p);
-		if (rtn[i] == 0)
+		if (rtn[i] == NULL)
 			return (free_words(rtn, cnt));
 	}
 	return (rtn);

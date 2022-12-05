@@ -6,16 +6,18 @@
 /*   By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 21:48:22 by minjungk          #+#    #+#             */
-/*   Updated: 2022/07/10 03:44:33 by minjungk         ###   ########.fr       */
+/*   Updated: 2022/12/05 23:02:18 by minjungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
 	while (*s != (char)c)
 	{
-		if (*s == 0)
-			return (0);
+		if (*s == '\0')
+			return (NULL);
 		++s;
 	}
 	return ((char *)s);
