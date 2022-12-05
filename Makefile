@@ -6,7 +6,7 @@
 #    By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/04 20:07:19 by minjungk          #+#    #+#              #
-#    Updated: 2022/12/05 21:13:37 by minjungk         ###   ########.fr        #
+#    Updated: 2022/12/06 00:22:27 by minjungk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,6 @@ NAME = libft.a
 
 CFLAGS = -Wall -Wextra -Werror -MMD -MP -O3
 ARFLAGS = rsc
-MAKEFLAGS = -j 8
 
 src_m = \
 	ft_isalpha.c \
