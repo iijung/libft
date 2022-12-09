@@ -6,42 +6,35 @@
 /*   By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 01:53:35 by minjungk          #+#    #+#             */
-/*   Updated: 2022/12/06 00:21:20 by minjungk         ###   ########.fr       */
+/*   Updated: 2022/12/09 14:22:10 by minjungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-enum e_type
-{
-	HEAD = 0,
-	TAIL = 1
-};
-
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*rtn[2];
+	t_list	*head;
+	t_list	*tail;
 	t_list	*new;
-	void	*tmp;
 
-	ft_memset(rtn, 0, 2 * sizeof(t_list *));
+	head = NULL;
+	tail = NULL;
 	while (lst && f)
 	{
-		tmp = f(lst->content);
-		new = ft_lstnew(tmp);
+		new = ft_lstnew(NULL);
 		if (new == NULL)
 		{
-			if (del)
-				del(tmp);
-			ft_lstclear(&rtn[HEAD], del);
+			ft_lstclear(&head, del);
 			return (NULL);
 		}
-		if (rtn[TAIL] == NULL)
-			ft_lstadd_back(&rtn[HEAD], new);
+		new->content = f(lst->content);
+		if (tail == NULL)
+			head = new;
 		else
-			rtn[TAIL]->next = new;
-		rtn[TAIL] = new;
+			tail->next = new;
+		tail = new;
 		lst = lst->next;
 	}
-	return (rtn[HEAD]);
+	return (head);
 }
