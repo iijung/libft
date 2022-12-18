@@ -6,22 +6,22 @@
 /*   By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 20:10:10 by minjungk          #+#    #+#             */
-/*   Updated: 2022/12/05 22:27:43 by minjungk         ###   ########.fr       */
+/*   Updated: 2022/12/18 10:52:42 by minjungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	isflow(unsigned long num, char c, int minus)
+static long	isflow(unsigned long num, char c, int minus)
 {
 	if (num > INT_MAX / 10 || (num == INT_MAX / 10 && (c > '7' + minus)))
 		errno = ERANGE;
 	if (num > LONG_MAX / 10 || (num == LONG_MAX / 10 && (c > '7' + minus)))
 	{
 		if (minus)
-			return ((int)LONG_MIN);
+			return (LONG_MIN);
 		else
-			return ((int)LONG_MAX);
+			return (LONG_MAX);
 	}
 	return (0);
 }
@@ -42,7 +42,7 @@ int	ft_atoi(const char *str)
 	{
 		flow = isflow(rtn, *str, minus);
 		if (flow)
-			return (flow);
+			return ((int)flow);
 		rtn = rtn * 10 + *str++ - '0';
 	}
 	if (minus)
