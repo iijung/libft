@@ -6,7 +6,7 @@
 /*   By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 20:10:10 by minjungk          #+#    #+#             */
-/*   Updated: 2022/12/18 10:52:42 by minjungk         ###   ########.fr       */
+/*   Updated: 2022/12/18 22:53:45 by minjungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	ft_atoi(const char *str)
 {
 	unsigned long	rtn;
 	int				minus;
-	int				flow;
+	long			flow;
 
 	rtn = 0;
 	minus = 0;
