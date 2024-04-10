@@ -6,11 +6,11 @@
 #    By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/04 20:07:19 by minjungk          #+#    #+#              #
-#    Updated: 2022/12/06 00:22:27 by minjungk         ###   ########.fr        #
+#    Updated: 2024/04/11 08:59:46 by minjungk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-.DEFAULT_ON_ERROR:
+.DELETE_ON_ERROR:
 .DEFAULT_GOAL := all
 
 NAME = libft.a
