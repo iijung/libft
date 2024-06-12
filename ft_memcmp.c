@@ -6,7 +6,7 @@
 /*   By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 18:34:47 by minjungk          #+#    #+#             */
-/*   Updated: 2022/07/08 18:38:42 by minjungk         ###   ########.fr       */
+/*   Updated: 2024/06/13 02:41:40 by minjungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 			return (*p1 - *p2);
 		++p1;
 		++p2;
-	}		
+	}
 	return (0);
 }
