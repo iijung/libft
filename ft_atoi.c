@@ -6,7 +6,7 @@
 /*   By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 20:10:10 by minjungk          #+#    #+#             */
-/*   Updated: 2022/12/18 22:53:45 by minjungk         ###   ########.fr       */
+/*   Updated: 2024/06/17 04:16:08 by minjungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ int	ft_atoi(const char *str)
 		++str;
 	if (*str == '+' || *str == '-')
 		minus = *str++ == '-';
+	if (!('0' <= *str && *str <= '9'))
+		errno = EINVAL;
 	while ('0' <= *str && *str <= '9')
 	{
 		flow = isflow(rtn, *str, minus);
