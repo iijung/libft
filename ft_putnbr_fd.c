@@ -6,7 +6,7 @@
 /*   By: minjungk <minjungk@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 00:33:55 by minjungk          #+#    #+#             */
-/*   Updated: 2022/09/16 14:04:58 by minjungk         ###   ########.fr       */
+/*   Updated: 2024/08/09 20:55:51 by minjungk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,11 @@ void	ft_putnbr_fd(int n, int fd)
 
 	num = n;
 	if (n == 0)
-	{
-		write(fd, "0", 1);
-		return ;
-	}
+		return (ft_putchar_fd('0', fd));
 	if (n < 0)
 	{
 		num = -n;
-		write(fd, "-", 1);
+		ft_putchar_fd('-', fd);
 	}
 	i = 0;
 	while (num)
@@ -36,5 +33,5 @@ void	ft_putnbr_fd(int n, int fd)
 		num /= 10;
 	}
 	while (--i >= 0)
-		write(fd, &tmp[i], 1);
+		ft_putchar_fd(tmp[i], fd);
 }
